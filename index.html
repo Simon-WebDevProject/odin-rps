@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let playerChoice, compChoice;
+        let pScore = 0, cScore = 0;
+
+        function getCompChoice(){
+            let temp = Math.floor(Math.random() * 3) + 1;
+
+            if(temp == 1){
+                return "ROCK";
+            } 
+            else if(temp == 2){
+                return "PAPER";
+            }
+            else{
+                return "SCISSOR";
+            }
+        }
+
+        function playRound(playerChoice, compChoice){
+
+            if(playerChoice == "ROCK" && compChoice == "ROCK"){
+                return "TIE GAME! ROCK == ROCK";
+            }
+            else if(playerChoice == "ROCK" && compChoice == "PAPER"){
+                cScore++;
+                return "YOU LOSE! ROCK < PAPER";
+            }
+            else if(playerChoice == "ROCK" && compChoice == "SCISSOR"){
+                pScore++
+                return "YOU WIN! ROCK > SCISSOR";
+            }
+            else if(playerChoice == "PAPER" && compChoice == "ROCK"){
+                pScore++
+                return "YOU WIN! PAPER > ROCK";
+            }
+            else if(playerChoice == "PAPER" && compChoice == "PAPER"){
+                return "TIE GAME! PAPER == PAPER";
+            }
+            else if(playerChoice == "PAPER" && compChoice == "SCISSOR"){
+                cScore++;
+                return "YOU LOSE! PAPER < SCISSOR";
+            }
+            else if(playerChoice == "SCISSOR" && compChoice == "ROCK"){
+                cScore++;
+                return "YOU LOSE! SCISSOR < ROCK";
+            }
+            else if(playerChoice == "SCISSOR" && compChoice == "PAPER"){
+                pScore++
+                return "YOU WIN! SCISSOR > PAPER";
+            }
+            else if(playerChoice == "SCISSOR" && compChoice == "SCISSOR"){
+                return "TIE GAME! SCISSOR == SCISSOR";
+            }
+            else{
+                return "error";
+            }
+ 
+        }
+
+        function game(){
+
+            for(let i = 0; i < 5; i++){
+
+                playerChoice = (prompt("Choose your weapon.")).toUpperCase();
+                console.log("  -  YOU: " + playerChoice);
+
+                compChoice = getCompChoice();
+                console.log("  -  COMPUTER: " + compChoice);
+
+                console.log(playRound(playerChoice, compChoice));
+            }
+
+            console.log(" // FINAL SCORE: " + pScore + " - " + cScore);
+
+            if(pScore > cScore){
+                console.log(" // WINNER: YOU!")
+            }
+            else if(cScore > pScore){
+                console.log(" // WINNER: COMPUTER!")
+            }
+            else{
+                console.log(" no winner...")
+            }
+        }
+
+        game();
+
+    </script>
+</body>
+</html>
