@@ -1,0 +1,69 @@
+body, html{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(26, 26, 26);
+    font-family: system-ui;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.content{
+    background-color: rgb(214, 214, 214);
+    padding: 20px 40px 30px 35px;
+    border-radius: 8px;
+    border: 2px solid rgb(38, 38, 38);
+    box-shadow: 5px 5px 1px grey;
+}
+.button{
+    min-width: 80px;
+    min-height: 80px;
+    border: none;
+    border-radius: 100%;
+    box-shadow: 2px 8px 1px rgb(100, 24, 24);
+    font-family: system-ui;
+    font-size: 16px;
+    color: rgb(69, 19, 19);
+    font-style: italic;
+    background-color: brown;
+    transition: all 0.5s;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:darkgrey;
+}
+.score{
+    font-size: 60px;
+}
+.log{
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+.down{
+    transform: translateY(10px);
+    box-shadow: 2px 1px 1px rgb(100, 24, 24);
+}
+.restart{
+    visibility: hidden;
+    margin-top: 30px;
+    color: rgb(203, 203, 203);
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    font-family: system-ui;
+    font-size: 30px;
+    transition: all 0.5s;
+}
+.restart:hover{
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+.end{
+    visibility: visible;
+}
